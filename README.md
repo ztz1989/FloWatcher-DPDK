@@ -3,11 +3,11 @@ FlowMown-DPDK is a software traffic monitor with fine-grained statistics:
  a pure DPDK application written in C language, it provides detailed statistics on both packet- and flow-level. 
  
 ## At a glance
- In a nutshell, FlowMon-DPDK achieves per-flow traffic monitoring at 14.88Mpps (ie 10 Gpbs line rate fully loaded  with minimum size  packets) with negligible packet losses (just a few packets per million) using a minimal amount of CPU resources.
+ In a nutshell, FlowMown-DPDK achieves per-flow traffic monitoring at 14.88Mpps (ie 10 Gpbs line rate fully loaded  with minimum size  packets) with negligible packet losses (just a few packets per million) using a minimal amount of CPU resources.
  
 To achieve this peformance, we leverage memory aligned double-hash (resolving collision with chaining) and avoid costly operations such as hash functions by leveraging RSS hash computed by the NIC and recently made available in DPDK.
 
-We will be releasing a detailed technical report of FlowMon-DPDK shortly.
+We will be releasing a detailed technical report of FlowMown-DPDK shortly.
  
  
 ## Capabilities
