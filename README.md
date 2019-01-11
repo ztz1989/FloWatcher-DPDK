@@ -32,7 +32,7 @@ To compile, just like most of DPDK applications, enter the corresponding directo
 ## Usage instructions
 The commands to run these models are not identical for now. In particular:
 
-1, Run-to-completion model: Please refer to the README file of FlowMown-DPDK-sample application. (https://github.com/ztz1989/FlowMown-DPDK/tree/master/FlowMown-DPDK-sample)
+1, Run-to-completion model: Please refer to the README file of FlowMown-DPDK-sample application. (https://github.com/ztz1989/FlowMown-DPDK/tree/master/run_to_completion)
 
 2, pthread pipeline model and L-thread pipeline model: Enter the corresponding sub-directory and conpile each of them using "make". The command to use is: 
 
