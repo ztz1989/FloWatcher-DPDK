@@ -10362,44 +10362,44 @@ per_lt          0x0000000000951598        0x8
  .debug_abbrev  0x0000000000001ee6      0x3d8 lthread_mutex.o
  .debug_abbrev  0x00000000000022be      0x348 lthread_diag.o
 
-.debug_line     0x0000000000000000     0x5ddf
+.debug_line     0x0000000000000000     0x5fa9
  *(.debug_line .debug_line.* .debug_line_end)
- .debug_line    0x0000000000000000     0x12a3 main.o
- .debug_line    0x00000000000012a3      0x261 murmur3.o
- .debug_line    0x0000000000001504      0x8a5 spooky.o
- .debug_line    0x0000000000001da9     0x133c lthread.o
- .debug_line    0x00000000000030e5      0xf34 lthread_sched.o
- .debug_line    0x0000000000004019      0xa3b lthread_cond.o
- .debug_line    0x0000000000004a54      0x760 lthread_tls.o
- .debug_line    0x00000000000051b4      0x8bf lthread_mutex.o
- .debug_line    0x0000000000005a73      0x36c lthread_diag.o
- .debug_line    0x0000000000005ddf        0x0 ctx.o
+ .debug_line    0x0000000000000000     0x12c7 main.o
+ .debug_line    0x00000000000012c7      0x262 murmur3.o
+ .debug_line    0x0000000000001529      0x8a6 spooky.o
+ .debug_line    0x0000000000001dcf     0x1382 lthread.o
+ .debug_line    0x0000000000003151      0xf7a lthread_sched.o
+ .debug_line    0x00000000000040cb      0xa81 lthread_cond.o
+ .debug_line    0x0000000000004b4c      0x7a6 lthread_tls.o
+ .debug_line    0x00000000000052f2      0x905 lthread_mutex.o
+ .debug_line    0x0000000000005bf7      0x3b2 lthread_diag.o
+ .debug_line    0x0000000000005fa9        0x0 ctx.o
 
 .debug_frame
  *(.debug_frame)
 
-.debug_str      0x0000000000000000     0x4e66
+.debug_str      0x0000000000000000     0x4f5f
  *(.debug_str)
- .debug_str     0x0000000000000000     0x3b98 main.o
-                                       0x412d (size before relaxing)
- .debug_str     0x0000000000003b98       0x91 murmur3.o
-                                        0x3e7 (size before relaxing)
- .debug_str     0x0000000000003c29      0x178 spooky.o
-                                        0x527 (size before relaxing)
- .debug_str     0x0000000000003da1      0x62a lthread.o
-                                        0xe65 (size before relaxing)
- .debug_str     0x00000000000043cb      0x3b8 lthread_sched.o
-                                        0xf92 (size before relaxing)
- .debug_str     0x0000000000004783       0x8d lthread_cond.o
-                                        0xbc7 (size before relaxing)
- .debug_str     0x0000000000004810      0x166 lthread_tls.o
-                                        0xe78 (size before relaxing)
- .debug_str     0x0000000000004976      0x12f lthread_mutex.o
-                                        0xc35 (size before relaxing)
- .debug_str     0x0000000000004aa5      0x390 lthread_diag.o
-                                        0xd0c (size before relaxing)
- .debug_str     0x0000000000004e35       0x31 ctx.o
-                                        0x2f6 (size before relaxing)
+ .debug_str     0x0000000000000000     0x3b9a main.o
+                                       0x412f (size before relaxing)
+ .debug_str     0x0000000000003b9a       0x92 murmur3.o
+                                        0x3e8 (size before relaxing)
+ .debug_str     0x0000000000003c2c      0x179 spooky.o
+                                        0x528 (size before relaxing)
+ .debug_str     0x0000000000003da5      0x64d lthread.o
+                                        0xe89 (size before relaxing)
+ .debug_str     0x00000000000043f2      0x3db lthread_sched.o
+                                        0xfb6 (size before relaxing)
+ .debug_str     0x00000000000047cd       0xb0 lthread_cond.o
+                                        0xbeb (size before relaxing)
+ .debug_str     0x000000000000487d      0x189 lthread_tls.o
+                                        0xe9c (size before relaxing)
+ .debug_str     0x0000000000004a06      0x152 lthread_mutex.o
+                                        0xc59 (size before relaxing)
+ .debug_str     0x0000000000004b58      0x3b3 lthread_diag.o
+                                        0xd30 (size before relaxing)
+ .debug_str     0x0000000000004f0b       0x54 ctx.o
+                                        0x319 (size before relaxing)
 
 .debug_loc      0x0000000000000000    0x2a6de
  *(.debug_loc)

@@ -44,7 +44,7 @@ APP = FlowMon-DPDK
 # all source are stored in SRCS-y
 SRCS-y := main.c murmur3.c spooky.c
 
-include /home/tianzhu/FlowMon-DPDK/common/common.mk #$(RTE_SDK)/examples/performance-thread/common/common.mk
+include $(RTE_SDK)/examples/performance-thread/common/common.mk
 
 CFLAGS += -O3 -g $(USER_FLAGS) $(INCLUDES) $(WERROR_FLAGS)
 LDFLAGS += -lncurses
