@@ -267,7 +267,7 @@ void print_list(void)
 {
 	int x, y;
 	WINDOW *win;
-	char msg[] = "Statistics of FlowMon-DPDK";
+	char msg[] = "Statistics of FlowMown-DPDK";
 	int len = strlen(msg);
 
 	getmaxyx(stdscr, y, x);
