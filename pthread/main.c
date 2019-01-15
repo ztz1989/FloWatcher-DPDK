@@ -1097,13 +1097,13 @@ lcore_main_count_double_hash(__attribute__((unused)) void *dummy)
 				global += gCtr[--qNum];
 		#endif
 
-                for (buf = 0; buf < nb_rx; buf++)
-                {
-/*                        ipv4_hdr = (struct ipv4_hdr *)(rte_pktmbuf_mtod(bufs[buf], struct ether_hdr *) + 1);
-                        //ipv4_tuple.v4.src_addr = rte_be_to_cpu_32(ipv4_hdr->src_addr);
-                        //ipv4_tuple.v4.dst_addr = rte_be_to_cpu_32(ipv4_hdr->dst_addr);
-			//ip.proto = ipv4_hdr->next_proto_id;
-                        ip.ip_src = rte_be_to_cpu_32(ipv4_hdr->src_addr);
+        for (buf = 0; buf < nb_rx; buf++)
+        {
+/*          ipv4_hdr = (struct ipv4_hdr *)(rte_pktmbuf_mtod(bufs[buf], struct ether_hdr *) + 1);
+            ipv4_tuple.v4.src_addr = rte_be_to_cpu_32(ipv4_hdr->src_addr);
+            ipv4_tuple.v4.dst_addr = rte_be_to_cpu_32(ipv4_hdr->dst_addr);
+			ip.proto = ipv4_hdr->next_proto_id;
+            ip.ip_src = rte_be_to_cpu_32(ipv4_hdr->src_addr);
 			ip.ip_dst = rte_be_to_cpu_32(ipv4_hdr->dst_addr);
 
                         tcp = (struct tcp_hdr *)((unsigned char *)ipv4_hdr + sizeof(struct ipv4_hdr));
