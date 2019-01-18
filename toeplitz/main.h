@@ -2,11 +2,11 @@
 //#define RAND
 
 
-#define TOE
+//#define TOE
 //#define TOE_BE
 //#define ADD
 //#define XOR
-//#define MURMUR
+#define MURMUR
 //#define BOB
 
 struct ipv4_5tuple {

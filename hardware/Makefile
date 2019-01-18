@@ -52,6 +52,6 @@ ifeq ($(CONFIG_RTE_TOOLCHAIN_GCC),y)
 CFLAGS_main.o += -Wno-return-type
 endif
 
-EXTRA_CFLAGS += -O3 -g -Wfatal-errors
+EXTRA_CFLAGS += -g -Wfatal-errors
 
 include $(RTE_SDK)/mk/rte.extapp.mk

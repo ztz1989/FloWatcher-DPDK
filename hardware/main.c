@@ -40,11 +40,21 @@
 #include <rte_cycles.h>
 #include <rte_lcore.h>
 #include <rte_mbuf.h>
+#include <rte_ip.h>
+#include <rte_tcp.h>
+#include <rte_byteorder.h>
 
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
 #include <rte_malloc.h>
+
+#include <sys/time.h>
+#include <rte_time.h>
+
+struct timespec start,stop;
+uint64_t diff=0;
+uint64_t diff_t=0;
 
 #define RX_RING_SIZE 4096
 
@@ -52,7 +62,7 @@
 #define MBUF_CACHE_SIZE 512
 #define BURST_SIZE 256
 
-#define RX_RINGS 2
+#define RX_RINGS 1
 #define PORT_ID 0
 
 #define WRITE_FILE
@@ -145,9 +155,14 @@ lcore_main(int p)
 	unsigned lcore_id;
 	lcore_id = rte_lcore_id();
 
+	uint32_t hash;
+	struct ipv4_hdr *ipv4_hdr;
+	struct tcp_hdr *tcp;
+
 #ifdef SOFT
 	uint64_t i;
 #endif
+
 	printf("Setting: core %u checks queue %d\n", lcore_id, p);
 
 	/* Run until the application is quit or killed. */
@@ -165,7 +180,25 @@ lcore_main(int p)
 		i += nb_rx;
 #endif
 		for (buf = 0; buf < nb_rx; buf++)
+		{
+			clock_gettime(CLOCK_REALTIME, &start);
+			//hash = bufs[buf]->hash.rss;
+
+			ipv4_hdr = (struct ipv4_hdr *)(rte_pktmbuf_mtod(bufs[buf], struct ether_hdr *) + 1);
+			rte_be_to_cpu_32(ipv4_hdr->src_addr);
+			rte_be_to_cpu_32(ipv4_hdr->dst_addr);
+			uint16_t a=ipv4_hdr->next_proto_id;
+
+			tcp = (struct tcp_hdr *)((unsigned char *)ipv4_hdr + sizeof(struct ipv4_hdr));
+			rte_be_to_cpu_16(tcp->src_port);
+			rte_be_to_cpu_16(tcp->dst_port);
+
+			clock_gettime(CLOCK_REALTIME, &stop);
+			diff += rte_timespec_to_ns(&stop) - rte_timespec_to_ns(&start);
+			diff_t++;
+			//printf("IP src address: %u\n",rte_be_to_cpu_32(ipv4_hdr->src_addr));
 			rte_pktmbuf_free(bufs[buf]);
+		}
 	}
 }
 
@@ -182,6 +215,8 @@ void handler(int sig)
         rte_eth_dev_stop(PORT_ID);
 
 	sleep(1);
+
+	printf("avg time for rss hash access: %lf\n", (double)diff/diff_t);
 
 	#ifdef WRITE_FILE
 	FILE *fp;
