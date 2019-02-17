@@ -1,5 +1,5 @@
-# FlowMown-DPDK
-A DPDK software traffic monitor for per-flow statistics. We aim at providing the detailed statistics on both packet level and flow level. Specifically, FlowMown-DPDK aims at providing per-flow throughput, inter-packet gap and percentiles. 
+# FloWatcher-DPDK
+A DPDK software traffic monitor for per-flow statistics. We aim at providing the detailed statistics on both packet level and flow level. Specifically, FloWatcher-DPDK aims at providing per-flow throughput, inter-packet gap and percentiles. 
 
 ## About the APP: 
   * Adopted aversion of DPDK: 17.05 
@@ -10,7 +10,7 @@ A DPDK software traffic monitor for per-flow statistics. We aim at providing the
 ## Usage:
  * compile with "make", just like any DPDK application
  * the default RX port is 2, we can change it by editing the #RX_RINGS macro. Better interface for setting the parameters will be provided very soon.
- * to run it: sudo ./build/FlowMown -c 111
+ * to run it: sudo ./build/FloWatcher -c 111
   
   "111" is just an example, we can choose any 3 lcores available.
   
