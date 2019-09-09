@@ -217,7 +217,7 @@ static int batch_n[RX_RINGS];
 
 #define FLOW_NUM 65536
 
-#define IPG
+//#define IPG
 //#define NC
 /*
 uint8_t default_rss_key[] = {

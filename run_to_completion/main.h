@@ -29,7 +29,7 @@
 #define MBUF_CACHE_SIZE 512
 #define BURST_SIZE 256
 
-#define RX_RINGS 2
+#define RX_RINGS 1
 #define PORT_ID 0
 
 /* 3 data structure macros*/
@@ -37,6 +37,8 @@
 #define DOUBLE_HASH
 //#define LINKED_LIST
 //#define HASH_LIST
+
+//#define FLOW_LEVEL
 
 /* Parameters for per-flow stats */
 //#define IPG

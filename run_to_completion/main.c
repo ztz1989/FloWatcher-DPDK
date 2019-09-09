@@ -199,8 +199,8 @@ static const struct rte_eth_conf port_conf_default = {
         },
         .rx_adv_conf = {
                 .rss_conf = {
-			.rss_key = NULL,
-                        .rss_hf = ETH_RSS_PROTO_MASK,
+					.rss_key = NULL,
+                    .rss_hf = ETH_RSS_PROTO_MASK,
                 }
         },
 //	.fdir_conf = fdir_conf,
@@ -385,6 +385,7 @@ double_hash(int p)
 
 		re[q] += nb_rx;
 
+#ifdef FLOW_LEVEL
 		// Per packet processing
 		for (buf = 0; buf < nb_rx; buf++)
 		{
@@ -449,9 +450,9 @@ double_hash(int p)
 					pkt_ctr[index_l].ctr[2]++;
 			}
 		}
-
-//		for (buf = 0; buf < nb_rx; buf++)
-//			rte_pktmbuf_free(bufs[buf]);
+#endif
+		for (buf = 0; buf < nb_rx; buf++)
+			rte_pktmbuf_free(bufs[buf]);
 	}
 }
 
@@ -854,7 +855,7 @@ port_init(uint8_t port)//, struct rte_mempool *mbuf_pool)
         rx_conf.rx_thresh.pthresh = 8;
         rx_conf.rx_thresh.hthresh = 8;
         rx_conf.rx_thresh.wthresh = 0;
-	rx_conf.rx_free_thresh = 2048;
+		rx_conf.rx_free_thresh = 2048;
         rx_conf.rx_drop_en = 0;
 
 	#ifdef DOUBLE_HASH
