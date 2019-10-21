@@ -29,17 +29,18 @@
 #   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 #   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-ifeq ($(RTE_SDK),)
-$(error "Please define RTE_SDK environment variable")
-endif
+#ifeq ($(RTE_SDK),)
+#$(error "Please define RTE_SDK environment variable")
+#endif
 
 # Default target, can be overriden by command line or environment
+RTE_SDK = /home/tianzhu/dpdk-stable-17.05.2
 RTE_TARGET ?= x86_64-native-linuxapp-gcc
 
 include $(RTE_SDK)/mk/rte.vars.mk
 
 # binary name
-APP = FlowMown-DPDK
+APP = FloWatcher-DPDK
 
 # all source are stored in SRCS-y
 SRCS-y := main.c murmur3.c spooky.c
