@@ -9,7 +9,8 @@ A DPDK software traffic monitor for per-flow statistics. We aim at providing the
   
 ## Usage:
  * compile with "make", just like any DPDK application
- * the default RX port is 0, we can change it by editing the PORT_ID macro. The default number of per-port queues is 1, we can change it with the RX_RINGS macro. Better interface for setting the parameters will be provided very soon.
+ * the default RX port is 0, we can change it by editing the PORT_ID macro. The default number of per-port queues is 1, we can change it with the RX_RINGS macro. Both macros are defined in the main.h header file.
+ Better interface for setting the parameters will be provided very soon.
  * to run it: sudo ./build/FloWatcher -c 111
   
   "111" is just an example, we can choose any 3 lcores available.
