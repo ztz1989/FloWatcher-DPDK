@@ -1,7 +1,14 @@
 # FloWatcher-DPDK
 FloWatcher-DPDK is a software traffic monitor with fine-grained statistics:
  a pure DPDK application written in C language, it provides detailed statistics on both packet- and flow-level. 
- 
+
+## Related publications:
+### Zhang, Tianzhu, Leonardo Linguaglossa, Massimo Gallo, Paolo Giaccone, and Dario Rossi. "FloWatcher-DPDK: lightweight line-rate flow-level monitoring in software." IEEE Transactions on Network and Service Management 16, no. 3 (2019): 1143-1156.
+
+### Zhang, Tianzhu, Leonardo Linguaglossa, Massimo Gallo, Paolo Giaccone, and Dario Rossi. "FlowMon-DPDK: Parsimonious per-flow software monitoring at line rate." In 2018 Network Traffic Measurement and Analysis Conference (TMA), pp. 1-8. IEEE, 2018.
+
+### Zhang, Tianzhu, Leonardo Linguaglossa, Massimo Gallo, Paolo Giaccone, and Dario Rossi. "High-speed per-flow software monitoring with limited resources." In Proceedings of the ACM SIGCOMM 2018 Conference on Posters and Demos, pp. 138-140. 2018.
+
 ## At a glance
  In a nutshell, FloWatcher-DPDK achieves per-flow traffic monitoring at 14.88Mpps (ie 10 Gpbs line rate fully loaded  with minimum size  packets) with negligible packet losses (just a few packets per million) using a minimal amount of CPU resources.
  
